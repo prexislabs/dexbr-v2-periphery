@@ -1,6 +1,6 @@
 {
-  "name": "dexbr-contracts",
-  "version": "1.0.0",
+  "name": "dexbr-v2-periphery",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://davydadriel@bitbucket.org/prexis/dexbr-contracts.git"
+    "url": "git+https://github.com/prexislabs/dexbr-v2-periphery.git"
   },
   "author": "",
   "license": "ISC",
