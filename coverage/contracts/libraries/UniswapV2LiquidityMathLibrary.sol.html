@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/libraries/UniswapV2LiquidityMathLibrary.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/libraries/</a> UniswapV2LiquidityMathLibrary.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity &gt;=0.5.0;
+&nbsp;
+import 'dexbr-v2-core/contracts/interfaces/IUniswapV2Pair.sol';
+import 'dexbr-v2-core/contracts/interfaces/IUniswapV2Factory.sol';
+import '@uniswap/lib/contracts/libraries/Babylonian.sol';
+import '@uniswap/lib/contracts/libraries/FullMath.sol';
+&nbsp;
+import './SafeMath.sol';
+import './UniswapV2Library.sol';
+&nbsp;
+// library containing some math for dealing with the liquidity shares of a pair, e.g. computing their exact value
+// in terms of the underlying tokens
+library UniswapV2LiquidityMathLibrary {
+    using SafeMath for uint256;
+&nbsp;
+    // computes the direction and magnitude of the profit-maximizing trade
+<span class="fstat-no" title="function not covered" >    function computeProfitMaximizingTrade(</span>
+        uint256 truePriceTokenA,
+        uint256 truePriceTokenB,
+        uint256 reserveA,
+        uint256 reserveB
+    ) pure internal returns (bool aToB, uint256 amountIn) {
+<span class="cstat-no" title="statement not covered" >        aToB = FullMath.mulDiv(reserveA, truePriceTokenB, reserveB) &lt; truePriceTokenA</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 invariant = reserveA.mul(reserveB);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 leftSide = Babylonian.sqrt(</span>
+            FullMath.mulDiv(
+                invariant.mul(1000),
+                aToB ? truePriceTokenA : truePriceTokenB,
+                (aToB ? truePriceTokenB : truePriceTokenA).mul(997)
+            )
+        );
+<span class="cstat-no" title="statement not covered" >        uint256 rightSide = (aToB ? reserveA.mul(1000) : reserveB.mul(1000)) / 997;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (leftSide &lt; rightSide) <span class="cstat-no" title="statement not covered" >return (false, 0);</span></span>
+&nbsp;
+        // compute the amount that must be sent to move the price to the profit-maximizing price
+<span class="cstat-no" title="statement not covered" >        amountIn = leftSide.sub(rightSide)</span>;
+    }
+&nbsp;
+    // gets the reserves after an arbitrage moves the price to the profit-maximizing ratio given an externally observed true price
+<span class="fstat-no" title="function not covered" >    function getReservesAfterArbitrage(</span>
+        address factory,
+        address tokenA,
+        address tokenB,
+        uint256 truePriceTokenA,
+        uint256 truePriceTokenB
+    ) view internal returns (uint256 reserveA, uint256 reserveB) {
+        // first get reserves before the swap
+<span class="cstat-no" title="statement not covered" >        (reserveA, reserveB) = UniswapV2Library.getReserves(factory, tokenA, tokenB)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(reserveA &gt; 0 &amp;&amp; reserveB &gt; 0, 'UniswapV2ArbitrageLibrary: ZERO_PAIR_RESERVES')</span>;
+&nbsp;
+        // then compute how much to swap to arb to the true price
+<span class="cstat-no" title="statement not covered" >        (bool aToB, uint256 amountIn) = computeProfitMaximizingTrade(truePriceTokenA, truePriceTokenB, reserveA, reserveB);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (amountIn == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return (reserveA, reserveB);</span>
+        }
+&nbsp;
+        // now affect the trade to the reserves
+<span class="cstat-no" title="statement not covered" >        if (aToB) {</span>
+<span class="cstat-no" title="statement not covered" >            uint amountOut = UniswapV2Library.getAmountOut(amountIn, reserveA, reserveB);</span>
+<span class="cstat-no" title="statement not covered" >            reserveA += amountIn</span>;
+<span class="cstat-no" title="statement not covered" >            reserveB -= amountOut</span>;
+        } else {
+<span class="cstat-no" title="statement not covered" >            uint amountOut = UniswapV2Library.getAmountOut(amountIn, reserveB, reserveA);</span>
+<span class="cstat-no" title="statement not covered" >            reserveB += amountIn</span>;
+<span class="cstat-no" title="statement not covered" >            reserveA -= amountOut</span>;
+        }
+    }
+&nbsp;
+    // computes liquidity value given all the parameters of the pair
+<span class="fstat-no" title="function not covered" >    function computeLiquidityValue(</span>
+        uint256 reservesA,
+        uint256 reservesB,
+        uint256 totalSupply,
+        uint256 liquidityAmount,
+        bool feeOn,
+        uint kLast
+    ) internal pure returns (uint256 tokenAAmount, uint256 tokenBAmount) {
+<span class="cstat-no" title="statement not covered" >        if (feeOn &amp;&amp; kLast &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            uint rootK = Babylonian.sqrt(reservesA.mul(reservesB));</span>
+<span class="cstat-no" title="statement not covered" >            uint rootKLast = Babylonian.sqrt(kLast);</span>
+<span class="cstat-no" title="statement not covered" >            if (rootK &gt; rootKLast) {</span>
+<span class="cstat-no" title="statement not covered" >                uint numerator1 = totalSupply;</span>
+<span class="cstat-no" title="statement not covered" >                uint numerator2 = rootK.sub(rootKLast);</span>
+<span class="cstat-no" title="statement not covered" >                uint denominator = rootK.mul(5).add(rootKLast);</span>
+<span class="cstat-no" title="statement not covered" >                uint feeLiquidity = FullMath.mulDiv(numerator1, numerator2, denominator);</span>
+<span class="cstat-no" title="statement not covered" >                totalSupply = totalSupply.add(feeLiquidity)</span>;
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return (reservesA.mul(liquidityAmount) / totalSupply, reservesB.mul(liquidityAmount) / totalSupply);</span>
+    }
+&nbsp;
+    // get all current parameters from the pair and compute value of a liquidity amount
+    // **note this is subject to manipulation, e.g. sandwich attacks**. prefer passing a manipulation resistant price to
+    // #getLiquidityValueAfterArbitrageToPrice
+<span class="fstat-no" title="function not covered" >    function getLiquidityValue(</span>
+        address factory,
+        address tokenA,
+        address tokenB,
+        uint256 liquidityAmount
+    ) internal view returns (uint256 tokenAAmount, uint256 tokenBAmount) {
+<span class="cstat-no" title="statement not covered" >        (uint256 reservesA, uint256 reservesB) = UniswapV2Library.getReserves(factory, tokenA, tokenB);</span>
+<span class="cstat-no" title="statement not covered" >        IUniswapV2Pair pair = IUniswapV2Pair(UniswapV2Library.pairFor(factory, tokenA, tokenB));</span>
+<span class="cstat-no" title="statement not covered" >        bool feeOn = IUniswapV2Factory(factory).feeTo() != address(0);</span>
+<span class="cstat-no" title="statement not covered" >        uint kLast = feeOn ? pair.kLast() : 0;</span>
+<span class="cstat-no" title="statement not covered" >        uint totalSupply = pair.totalSupply();</span>
+<span class="cstat-no" title="statement not covered" >        return computeLiquidityValue(reservesA, reservesB, totalSupply, liquidityAmount, feeOn, kLast);</span>
+    }
+&nbsp;
+    // given two tokens, tokenA and tokenB, and their "true price", i.e. the observed ratio of value of token A to token B,
+    // and a liquidity amount, returns the value of the liquidity in terms of tokenA and tokenB
+<span class="fstat-no" title="function not covered" >    function getLiquidityValueAfterArbitrageToPrice(</span>
+        address factory,
+        address tokenA,
+        address tokenB,
+        uint256 truePriceTokenA,
+        uint256 truePriceTokenB,
+        uint256 liquidityAmount
+    ) internal view returns (
+        uint256 tokenAAmount,
+        uint256 tokenBAmount
+    ) {
+<span class="cstat-no" title="statement not covered" >        bool feeOn = IUniswapV2Factory(factory).feeTo() != address(0);</span>
+<span class="cstat-no" title="statement not covered" >        IUniswapV2Pair pair = IUniswapV2Pair(UniswapV2Library.pairFor(factory, tokenA, tokenB));</span>
+<span class="cstat-no" title="statement not covered" >        uint kLast = feeOn ? pair.kLast() : 0;</span>
+<span class="cstat-no" title="statement not covered" >        uint totalSupply = pair.totalSupply();</span>
+&nbsp;
+        // this also checks that totalSupply &gt; 0
+<span class="cstat-no" title="statement not covered" >        require(totalSupply &gt;= liquidityAmount &amp;&amp; liquidityAmount &gt; 0, 'ComputeLiquidityValue: LIQUIDITY_AMOUNT')</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        (uint reservesA, uint reservesB) = getReservesAfterArbitrage(factory, tokenA, tokenB, truePriceTokenA, truePriceTokenB);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return computeLiquidityValue(reservesA, reservesB, totalSupply, liquidityAmount, feeOn, kLast);</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Sep 19 2022 13:18:24 GMT-0300 (Horário Padrão de Brasília)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

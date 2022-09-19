@@ -1,29 +1,31 @@
 {
-  "name": "@uniswap/v2-periphery",
-  "version": "1.1.0-beta.0",
-  "description": "🎚 Peripheral smart contracts for interacting with Uniswap V2",
-  "engines": {
-    "node": ">=10"
+  "name": "dexbr-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://uniswap.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/uniswap-v2-periphery"
+    "url": "git+https://davydadriel@bitbucket.org/prexis/dexbr-contracts.git"
   },
-  "files": [
-    "build",
-    "contracts"
-  ],
-  "dependencies": {
-    "@uniswap/lib": "4.0.1-alpha",
-    "@uniswap/v2-core": "1.0.0"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/prexis/dexbr-contracts/issues"
   },
+  "homepage": "https://bitbucket.org/prexis/dexbr-contracts#readme",
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.1.1",
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
     "ethereum-waffle": "^2.4.1",
     "ethereumjs-util": "^6.2.0",
+    "ethers": "^5.6.9",
+    "hardhat": "^2.10.1",
     "mocha": "^6.2.2",
     "ncp": "^2.0.0",
     "prettier": "^1.19.1",
@@ -32,17 +34,13 @@
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
   },
-  "scripts": {
-    "lint": "yarn prettier ./test/*.ts --check",
-    "lint:fix": "yarn prettier ./test/*.ts --write",
-    "clean": "rimraf ./build/",
-    "copy-v1-artifacts": "ncp ./buildV1 ./build",
-    "precompile": "yarn clean",
-    "compile": "waffle .waffle.json",
-    "postcompile": "yarn copy-v1-artifacts",
-    "pretest": "yarn compile",
-    "test": "mocha",
-    "prepublishOnly": "yarn test"
-  },
-  "license": "GPL-3.0-or-later"
+  "dependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@uniswap/lib": "4.0.1-alpha",
+    "dexbr-v2-core": "github:prexislabs/dexbr-v2-core",
+    "dotenv": "^16.0.1",
+    "ethereum-waffle": "^2.4.1",
+    "hardhat-abi-exporter": "^2.10.0",
+    "solidity-coverage": "^0.7.21"
+  }
 }

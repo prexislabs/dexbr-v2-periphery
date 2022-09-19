@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/UniswapV2Migrator.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> UniswapV2Migrator.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity =0.6.6;
+&nbsp;
+import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
+&nbsp;
+import './interfaces/IUniswapV2Migrator.sol';
+import './interfaces/V1/IUniswapV1Factory.sol';
+import './interfaces/V1/IUniswapV1Exchange.sol';
+import './interfaces/IUniswapV2Router01.sol';
+import './interfaces/IERC20.sol';
+&nbsp;
+contract UniswapV2Migrator is IUniswapV2Migrator {
+    IUniswapV1Factory immutable factoryV1;
+    IUniswapV2Router01 immutable router;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor(address _factoryV1, address _router) public {</span>
+<span class="cstat-no" title="statement not covered" >        factoryV1 = IUniswapV1Factory(_factoryV1)</span>;
+<span class="cstat-no" title="statement not covered" >        router = IUniswapV2Router01(_router)</span>;
+    }
+&nbsp;
+    // needs to accept ETH from any v1 exchange and the router. ideally this could be enforced, as in the router,
+    // but it's not possible because it requires a call to the v1 factory, which takes too much gas
+    receive() external payable {}
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function migrate(address token, uint amountTokenMin, uint amountETHMin, address to, uint deadline)</span>
+        external
+        override
+    {
+<span class="cstat-no" title="statement not covered" >        IUniswapV1Exchange exchangeV1 = IUniswapV1Exchange(factoryV1.getExchange(token));</span>
+<span class="cstat-no" title="statement not covered" >        uint liquidityV1 = exchangeV1.balanceOf(msg.sender);</span>
+<span class="cstat-no" title="statement not covered" >        require(exchangeV1.transferFrom(msg.sender, address(this), liquidityV1), 'TRANSFER_FROM_FAILED')</span>;
+<span class="cstat-no" title="statement not covered" >        (uint amountETHV1, uint amountTokenV1) = exchangeV1.removeLiquidity(liquidityV1, 1, 1, uint(-1));</span>
+<span class="cstat-no" title="statement not covered" >        TransferHelper.safeApprove(token, address(router), amountTokenV1)</span>;
+<span class="cstat-no" title="statement not covered" >        (uint amountTokenV2, uint amountETHV2,) = router.addLiquidityETH{value: amountETHV1}(</span>
+            token,
+            amountTokenV1,
+            amountTokenMin,
+            amountETHMin,
+            to,
+            deadline
+        );
+<span class="cstat-no" title="statement not covered" >        if (amountTokenV1 &gt; amountTokenV2) {</span>
+<span class="cstat-no" title="statement not covered" >            TransferHelper.safeApprove(token, address(router), 0)</span>; // be a good blockchain citizen, reset allowance to 0
+<span class="cstat-no" title="statement not covered" >            TransferHelper.safeTransfer(token, msg.sender, amountTokenV1 - amountTokenV2)</span>;
+        } else <span class="cstat-no" title="statement not covered" >if (amountETHV1 &gt; amountETHV2) {</span>
+            // addLiquidityETH guarantees that all of amountETHV1 or amountTokenV1 will be used, hence this else is safe
+<span class="cstat-no" title="statement not covered" >            TransferHelper.safeTransferETH(msg.sender, amountETHV1 - amountETHV2)</span>;
+        }
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Sep 19 2022 13:18:24 GMT-0300 (Horário Padrão de Brasília)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

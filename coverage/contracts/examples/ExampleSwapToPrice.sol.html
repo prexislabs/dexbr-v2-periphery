@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/examples/ExampleSwapToPrice.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/examples/</a> ExampleSwapToPrice.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity =0.6.6;
+&nbsp;
+import 'dexbr-v2-core/contracts/interfaces/IUniswapV2Pair.sol';
+import '@uniswap/lib/contracts/libraries/Babylonian.sol';
+import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
+&nbsp;
+import '../libraries/UniswapV2LiquidityMathLibrary.sol';
+import '../interfaces/IERC20.sol';
+import '../interfaces/IUniswapV2Router01.sol';
+import '../libraries/SafeMath.sol';
+import '../libraries/UniswapV2Library.sol';
+&nbsp;
+contract ExampleSwapToPrice {
+    using SafeMath for uint256;
+&nbsp;
+    IUniswapV2Router01 public immutable router;
+    address public immutable factory;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor(address factory_, IUniswapV2Router01 router_) public {</span>
+<span class="cstat-no" title="statement not covered" >        factory = factory_</span>;
+<span class="cstat-no" title="statement not covered" >        router = router_</span>;
+    }
+&nbsp;
+    // swaps an amount of either token such that the trade is profit-maximizing, given an external true price
+    // true price is expressed in the ratio of token A to token B
+    // caller must approve this contract to spend whichever token is intended to be swapped
+<span class="fstat-no" title="function not covered" >    function swapToPrice(</span>
+        address tokenA,
+        address tokenB,
+        uint256 truePriceTokenA,
+        uint256 truePriceTokenB,
+        uint256 maxSpendTokenA,
+        uint256 maxSpendTokenB,
+        address to,
+        uint256 deadline
+    ) public {
+        // true price is expressed as a ratio, so both values must be non-zero
+<span class="cstat-no" title="statement not covered" >        require(truePriceTokenA != 0 &amp;&amp; truePriceTokenB != 0, "ExampleSwapToPrice: ZERO_PRICE")</span>;
+        // caller can specify 0 for either if they wish to swap in only one direction, but not both
+<span class="cstat-no" title="statement not covered" >        require(maxSpendTokenA != 0 || maxSpendTokenB != 0, "ExampleSwapToPrice: ZERO_SPEND")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        bool aToB;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 amountIn;</span>
+        {
+<span class="cstat-no" title="statement not covered" >            (uint256 reserveA, uint256 reserveB) = UniswapV2Library.getReserves(factory, tokenA, tokenB);</span>
+<span class="cstat-no" title="statement not covered" >            (aToB, amountIn) = UniswapV2LiquidityMathLibrary.computeProfitMaximizingTrade(</span>
+                truePriceTokenA, truePriceTokenB,
+                reserveA, reserveB
+            );
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(amountIn &gt; 0, 'ExampleSwapToPrice: ZERO_AMOUNT_IN')</span>;
+&nbsp;
+        // spend up to the allowance of the token in
+<span class="cstat-no" title="statement not covered" >        uint256 maxSpend = aToB ? maxSpendTokenA : maxSpendTokenB;</span>
+<span class="cstat-no" title="statement not covered" >        if (amountIn &gt; maxSpend) {</span>
+<span class="cstat-no" title="statement not covered" >            amountIn = maxSpend</span>;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        address tokenIn = aToB ? tokenA : tokenB;</span>
+<span class="cstat-no" title="statement not covered" >        address tokenOut = aToB ? tokenB : tokenA;</span>
+<span class="cstat-no" title="statement not covered" >        TransferHelper.safeTransferFrom(tokenIn, msg.sender, address(this), amountIn)</span>;
+<span class="cstat-no" title="statement not covered" >        TransferHelper.safeApprove(tokenIn, address(router), amountIn)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        address[] memory path = new address[](2);</span>
+<span class="cstat-no" title="statement not covered" >        path[0] = tokenIn</span>;
+<span class="cstat-no" title="statement not covered" >        path[1] = tokenOut</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        router.swapExactTokensForTokens(</span>
+            amountIn,
+            0, // amountOutMin: we can skip computing this number because the math is tested
+            path,
+            to,
+            deadline
+        );
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Sep 19 2022 13:18:24 GMT-0300 (Horário Padrão de Brasília)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
