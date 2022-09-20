@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@uniswap/lib": "4.0.1-alpha",
-    "@uniswap/v2-core": "1.0.0"
+    "dexbr-v2-core": "https://github.com/prexislabs/dexbr-v2-core.git"
   },
   "devDependencies": {
     "@types/chai": "^4.2.6",
