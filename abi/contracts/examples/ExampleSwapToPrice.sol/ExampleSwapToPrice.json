@@ -1,6 +1,0 @@
-[
-  "constructor(address,address)",
-  "function factory() view returns (address)",
-  "function router() view returns (address)",
-  "function swapToPrice(address,address,uint256,uint256,uint256,uint256,address,uint256)"
-]

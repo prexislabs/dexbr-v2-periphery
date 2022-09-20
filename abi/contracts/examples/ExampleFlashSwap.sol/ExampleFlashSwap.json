@@ -1,4 +1,0 @@
-[
-  "constructor(address,address,address)",
-  "function uniswapV2Call(address,uint256,uint256,bytes)"
-]
